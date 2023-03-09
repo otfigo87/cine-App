@@ -1,0 +1,253 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/Dongle-Regular.ttf);
+}
+@font-face {
+  font-family: "font-2";
+  src: url(../assets/fonts/Dongle-Light.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "font-1", sans-serif;
+}
+
+body {
+  background: #212040;
+  color: rgb(238, 238, 238);
+}
+
+li {
+  list-style: none;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-list-page > h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+}
+.user-list-page > h2 span {
+  font-size: 1rem;
+}
+
+.header h1 {
+  font-size: 3.3rem;
+  text-shadow: 2px 3px 0px #546fe4;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.header nav {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 1.3rem;
+}
+.header nav ul {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+}
+.header nav ul a {
+  text-decoration: none;
+  color: rgb(238, 238, 238);
+  border-radius: 10px;
+  width: 102px;
+  text-align: center;
+  margin-right: 5px;
+  padding: 8px;
+}
+.header nav ul a:visited {
+  text-decoration: none;
+  color: rgb(238, 238, 238);
+}
+.header nav ul a:hover {
+  background: #060d2c;
+}
+.header nav ul a.nav-active {
+  background: #546fe4;
+}
+.header nav ul a.nav-active:hover {
+  background: #060d2c;
+}
+
+.form-component .form-container {
+  text-align: center;
+}
+.form-component form {
+  width: 300px;
+  margin: 0 auto;
+}
+.form-component form input[type=text] {
+  padding: 1px 10px;
+  border-radius: 10px 10px 0 0;
+  border: none;
+  font-size: 1.5rem;
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+  outline: none;
+  text-align: center;
+}
+.form-component form input[type=submit] {
+  padding: 1px 10px;
+  width: 220px;
+  border-radius: 0 0 10px 10px;
+  border: none;
+  background: #546fe4;
+  color: rgb(238, 238, 238);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+.form-component form input[type=submit]:hover {
+  background: #060d2c;
+}
+.form-component .btn-sort-container {
+  margin: 8px auto;
+  width: 220px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.form-component .btn-sort-container #goodToBad {
+  border-radius: 10px 0 0 10px;
+}
+.form-component .btn-sort-container #badToGood {
+  border-radius: 0 10px 10px 0;
+}
+.form-component .btn-sort-container #goodToBad,
+.form-component .btn-sort-container #badToGood {
+  background: #546fe4;
+  width: 110px;
+  transition: 0.3s;
+  position: relative;
+}
+.form-component .btn-sort-container #goodToBad:hover,
+.form-component .btn-sort-container #badToGood:hover {
+  background: #060d2c;
+}
+.form-component .btn-sort-container #goodToBad span {
+  transform: translateY(-40%);
+  right: 18px;
+}
+.form-component .btn-sort-container #badToGood span {
+  transform: translateY(-40%);
+  left: 16px;
+}
+.form-component .btn-sort-container #goodToBad span,
+.form-component .btn-sort-container #badToGood span {
+  position: absolute;
+  top: 50%;
+}
+
+.card {
+  flex: 1 0 25%;
+  min-width: 260px;
+  max-width: 280px;
+  height: 620px;
+  background: #060d2c;
+  border-radius: 35px;
+  margin: 5px;
+  padding: 26px 15px 30px;
+  position: relative;
+  overflow: hidden;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  height: 90px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, #060d2c 55%);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 0 0 30px 30px;
+}
+.card img {
+  width: 80%;
+  height: 254px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50px;
+  box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1), 0 16px 1px rgba(255, 255, 255, 0.05);
+}
+.card h2 {
+  margin: 24px 0 0px;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+.card h5 {
+  color: rgb(100, 100, 100);
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.card h4 {
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  margin-top: -4px;
+}
+.card h4 span {
+  font-size: 0.7rem;
+}
+.card ul {
+  margin: 6px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card li {
+  background: #212040;
+  border-radius: 18px;
+  padding: 0px 7px;
+  margin: 0 4px 4px 0;
+  font-size: 1.1rem;
+}
+.card li:first-child {
+  margin-left: -4px;
+}
+.card h3 {
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+.card p {
+  color: rgb(100, 100, 100);
+  font-size: 1.3rem;
+  line-height: 20px;
+  height: 160px;
+  overflow-y: scroll;
+}
+.card p::-webkit-scrollbar {
+  display: none;
+}
+.card .btn {
+  background: #546fe4;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 0;
+  width: 150px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 50;
+}
+.card .btn:hover {
+  background: #212040;
+  box-shadow: 0 0 10px rgba(84, 110, 228, 0.8235294118);
+  font-size: 1.025rem;
+}/*# sourceMappingURL=index.css.map */
