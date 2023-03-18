@@ -70,6 +70,16 @@ const Card = ({movie}) => {
         return genreArray.map((genre) => <li key={genre}>{genre}</li>);
       };
 
+      const addStorage = () => {
+        let storedData = localStorage.movies ? localStorage.movies.split(",") : [];
+
+        if(!storedData.includes(movie.id.toString())) {
+          storedData.push(movie.id);
+          localStorage.movies = storedData;
+        }
+
+      }
+
   return (
     <div className="card">
       <img
@@ -90,7 +100,7 @@ const Card = ({movie}) => {
       </ul>
       {movie.overview ? <h3>Synopsis</h3> : ""}
       <p>{movie.overview}</p>
-      <div className="btn">Add to favorites</div>
+      <div className="btn" onClick={() => addStorage()}>Add to favorites</div>
     </div>
   );
 }

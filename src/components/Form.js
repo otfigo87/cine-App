@@ -30,6 +30,7 @@ const Form = () => {
             />
             <input type="submit" value="Search" />
           </form>
+
           <div className="btn-sort-container">
             <div
               className="btn-sort"
@@ -46,8 +47,10 @@ const Form = () => {
               Flop<span>👎</span>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
+
+      
       <div className="result">
         {moviesData
           .slice(0, 12)
