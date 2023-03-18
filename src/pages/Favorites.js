@@ -26,7 +26,7 @@ const Favorites = () => {
         {listData.length > 0 ? (
           listData.map(movie => <Card movie={movie} key={movie.id} />)
         ) : (
-          <h2>You list is empty... Select your favorite movies</h2>
+          <h2>Your list is empty... Select your favorite movies</h2>
         )}
       </div>
     </div>

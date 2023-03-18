@@ -77,7 +77,12 @@ const Card = ({movie}) => {
           storedData.push(movie.id);
           localStorage.movies = storedData;
         }
+      }
 
+      const removeStorage = () => {
+        let storedData = localStorage.movies.split(",");
+        let newData = storedData.filter((id) => id!= movie.id);
+        window.localStorage.movies = newData;
       }
 
   return (
@@ -93,14 +98,22 @@ const Card = ({movie}) => {
       <h2>{movie.title}</h2>
       {movie.release_date ? <h5>released: {movie.release_date}</h5> : null}
       <h4>
-        {movie.vote_average}/10 <span>⭐</span>
+        {movie.vote_average.toFixed(1)}/10 <span>⭐</span>
       </h4>
       <ul>
         {movie.genre_ids ? genreFinder() : null}
       </ul>
       {movie.overview ? <h3>Synopsis</h3> : ""}
       <p>{movie.overview}</p>
-      <div className="btn" onClick={() => addStorage()}>Add to favorites</div>
+      {movie.genre_ids ? (
+        <div className="btn" onClick={() => addStorage()}>Add to favorites</div>
+      ): (
+        <div className="btn" onClick={() => {
+         removeStorage();
+         window.location.reload()
+        }}>Remove from favorites</div>
+          
+      )}
     </div>
   );
 }
