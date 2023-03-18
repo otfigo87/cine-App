@@ -8,13 +8,12 @@ const Favorites = () => {
   const [listData, setListData] = useState([])
 
   useEffect(() => {
-    let movieArray = []
     let moviesId = localStorage.movies ? localStorage.movies.split(",") : [];
     // console.log(moviesId)
     for (let i = 0; i < moviesId.length; i++) {
       axios.get(
         `https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=7b972eefbba621f914713275c4092f65`
-      ).then((res) => movieArray.push(res.data)).then(() => setListData(movieArray));
+      ).then((res) => setListData((listData) => [...listData, res.data]))
     }
   } ,[])
   return (
@@ -27,7 +26,7 @@ const Favorites = () => {
         {listData.length > 0 ? (
           listData.map(movie => <Card movie={movie} key={movie.id} />)
         ) : (
-          <h2>You didn't add any movies to your favorites list</h2>
+          <h2>You list is empty... Select your favorite movies</h2>
         )}
       </div>
     </div>
